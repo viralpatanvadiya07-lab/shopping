@@ -31,7 +31,7 @@
 
 /* Header */
 .profile__header {
-  margin-bottom: var(--space-2xl);
+  margin-bottom: 50px; /* Increased from 2xl for better breathing room */
 }
 
 .profile__header h1 {
