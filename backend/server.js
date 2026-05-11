@@ -2,9 +2,13 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
+const connectDB = require('./config/db');
 
 // Load env vars
 dotenv.config();
+
+// Connect to database
+connectDB();
 
 const app = express();
 
@@ -13,6 +17,8 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/payment', require('./routes/paymentRoutes'));
 
 app.get('/', (req, res) => {

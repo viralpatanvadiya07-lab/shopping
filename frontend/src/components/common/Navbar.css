@@ -67,6 +67,8 @@
 
 .navbar__link:hover {
   color: var(--text-primary);
+  background: var(--bg-glass-light);
+  text-shadow: 0 0 10px var(--primary-glow);
 }
 
 .navbar__link--active {
@@ -88,6 +90,7 @@
 .navbar__link:hover .navbar__link-indicator,
 .navbar__link--active .navbar__link-indicator {
   width: 60%;
+  box-shadow: 0 0 10px var(--primary-light);
 }
 
 .navbar__mobile-auth {
@@ -118,8 +121,10 @@
 }
 
 .navbar__action-btn:hover {
-  color: var(--text-primary);
+  color: var(--primary-light);
   background: var(--bg-glass-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Cart */
@@ -127,21 +132,26 @@
   position: relative;
 }
 
-.navbar__cart-badge {
+.navbar__cart-badge,
+.navbar__wishlist-badge {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  min-width: 18px;
+  top: -5px;
+  right: -5px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
   height: 18px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary);
-  color: white;
-  font-size: 0.65rem;
-  font-weight: 700;
-  border-radius: var(--radius-full);
-  padding: 0 4px;
+  border: 2px solid var(--bg-primary);
+}
+
+.navbar__wishlist-badge {
+  background: var(--error);
 }
 
 /* Login Button */

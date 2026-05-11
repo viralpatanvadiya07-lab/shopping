@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
 import { FiShoppingCart, FiHeart, FiEye, FiStar } from 'react-icons/fi';
 import { useCart } from '../../hooks/useCart';
+import { useWishlist } from '../../hooks/useWishlist';
 import { formatPrice, getDiscountPercent } from '../../data/products';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const discount = product.originalPrice
     ? getDiscountPercent(product.originalPrice, product.price)
     : 0;
+  const wishlisted = isInWishlist(product.id);
 
   return (
     <div className="product-card glass-card" id={`product-card-${product.id}`}>
@@ -48,7 +51,12 @@ const ProductCard = ({ product }) => {
           >
             <FiShoppingCart />
           </button>
-          <button className="product-card__action-btn" title="Wishlist" aria-label="Add to wishlist">
+          <button
+            className={`product-card__action-btn ${wishlisted ? 'product-card__action-btn--wishlisted' : ''}`}
+            onClick={() => toggleWishlist(product)}
+            title={wishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+            aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+          >
             <FiHeart />
           </button>
           <Link to={`/product/${product.id}`} className="product-card__action-btn" title="Quick View" aria-label="View product">

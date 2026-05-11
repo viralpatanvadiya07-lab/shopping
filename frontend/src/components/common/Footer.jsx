@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer__newsletter-content">
             <div className="footer__newsletter-text">
-              <h3>LuxeLane Pay</h3>
+              <h3>ShopVerse Newsletter</h3>
               <p>Get exclusive deals, new arrivals & more delivered to your inbox.</p>
             </div>
             <form className="footer__newsletter-form" onSubmit={(e) => e.preventDefault()} id="newsletter-form">
@@ -62,10 +62,10 @@ const Footer = () => {
             <div className="footer__brand">
               <Link to="/" className="footer__logo">
                 <span>🛍️</span>
-                <span>Luxe<span className="gradient-text">Lane</span></span>
+                <span>Shop<span className="gradient-text">Verse</span></span>
               </Link>
               <p className="footer__description">
-                Your premium destination for the latest trends in fashion, electronics, and lifestyle products. Shop with confidence.
+                Your premium destination for the latest trends in fashion, electronics, and lifestyle products. Shop with confidence at ShopVerse.
               </p>
               <div className="footer__socials">
                 <a href="#" className="footer__social-link" aria-label="GitHub"><FiGithub /></a>
@@ -123,7 +123,7 @@ const Footer = () => {
                 </div>
                 <div className="footer__contact-item">
                   <FiMail />
-                  <span>support@luxelane.com</span>
+                  <span>support@shopverse.com</span>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ const Footer = () => {
       <div className="footer__bottom">
         <div className="container">
           <div className="footer__bottom-content">
-            <p>© {currentYear} LuxeLane. All rights reserved.</p>
+            <p>© {currentYear} ShopVerse. All rights reserved.</p>
             <div className="footer__payment-methods">
               <span>💳</span>
               <span>🏦</span>

@@ -24,7 +24,7 @@ const HeroSection = () => {
           <h1 className="hero__title">
             Discover Your
             <span className="hero__title-highlight"> Perfect Style</span>
-            <br />with LuxeLane
+            <br />with ShopVerse
           </h1>
 
           <p className="hero__subtitle">

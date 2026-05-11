@@ -1,10 +1,9 @@
 ecommerce-project/
 │
-├── frontend/
+├── client/
 │   │
 │   ├── public/
 │   │   ├── favicon.ico
-│   │   ├── logo.png
 │   │   └── index.html
 │   │
 │   ├── src/
@@ -12,138 +11,144 @@ ecommerce-project/
 │   │   ├── assets/
 │   │   │   ├── images/
 │   │   │   ├── icons/
-│   │   │   ├── banners/
+│   │   │   ├── logos/
 │   │   │   └── animations/
 │   │   │
 │   │   ├── components/
 │   │   │   │
-│   │   │   ├── common/
+│   │   │   ├── layout/
 │   │   │   │   ├── Navbar.jsx
 │   │   │   │   ├── Footer.jsx
-│   │   │   │   ├── Loader.jsx
 │   │   │   │   ├── Sidebar.jsx
-│   │   │   │   ├── SearchBar.jsx
-│   │   │   │   └── Button.jsx
+│   │   │   │   ├── MobileMenu.jsx
+│   │   │   │   └── AdminSidebar.jsx
+│   │   │   │
+│   │   │   ├── ui/
+│   │   │   │   ├── Button.jsx
+│   │   │   │   ├── Input.jsx
+│   │   │   │   ├── Loader.jsx
+│   │   │   │   ├── Modal.jsx
+│   │   │   │   ├── Toast.jsx
+│   │   │   │   ├── ThemeToggle.jsx
+│   │   │   │   └── Pagination.jsx
 │   │   │   │
 │   │   │   ├── home/
-│   │   │   │   ├── HeroSection.jsx
-│   │   │   │   ├── Categories.jsx
+│   │   │   │   ├── HeroBanner.jsx
 │   │   │   │   ├── FeaturedProducts.jsx
-│   │   │   │   ├── TrendingProducts.jsx
-│   │   │   │   ├── OffersSection.jsx
-│   │   │   │   └── Reviews.jsx
+│   │   │   │   ├── Categories.jsx
+│   │   │   │   ├── Offers.jsx
+│   │   │   │   └── BackgroundAnimation.jsx
 │   │   │   │
 │   │   │   ├── product/
 │   │   │   │   ├── ProductCard.jsx
+│   │   │   │   ├── ProductGrid.jsx
 │   │   │   │   ├── ProductDetails.jsx
 │   │   │   │   ├── ProductImages.jsx
-│   │   │   │   ├── Ratings.jsx
-│   │   │   │   └── ProductFilter.jsx
+│   │   │   │   ├── ProductReviews.jsx
+│   │   │   │   ├── ProductFilter.jsx
+│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   └── Rating.jsx
 │   │   │   │
 │   │   │   ├── cart/
 │   │   │   │   ├── CartItem.jsx
 │   │   │   │   ├── CartSummary.jsx
-│   │   │   │   └── CouponBox.jsx
-│   │   │   │
-│   │   │   ├── checkout/
 │   │   │   │   ├── CheckoutForm.jsx
-│   │   │   │   ├── PaymentMethods.jsx
-│   │   │   │   ├── AddressForm.jsx
-│   │   │   │   └── OrderSummary.jsx
+│   │   │   │   └── PaymentForm.jsx
 │   │   │   │
-│   │   │   ├── auth/
-│   │   │   │   ├── Login.jsx
-│   │   │   │   ├── Signup.jsx
-│   │   │   │   ├── ForgotPassword.jsx
-│   │   │   │   └── OTPVerification.jsx
-│   │   │   │
-│   │   │   ├── user/
-│   │   │   │   ├── Profile.jsx
-│   │   │   │   ├── Orders.jsx
-│   │   │   │   ├── Wishlist.jsx
-│   │   │   │   ├── Notifications.jsx
-│   │   │   │   └── Settings.jsx
+│   │   │   ├── wishlist/
+│   │   │   │   └── WishlistCard.jsx
 │   │   │   │
 │   │   │   └── admin/
-│   │   │       ├── AdminSidebar.jsx
-│   │   │       ├── DashboardCards.jsx
 │   │   │       ├── ProductTable.jsx
-│   │   │       ├── OrderTable.jsx
 │   │   │       ├── UserTable.jsx
-│   │   │       └── AnalyticsChart.jsx
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Shop.jsx
-│   │   │   ├── ProductPage.jsx
-│   │   │   ├── Cart.jsx
-│   │   │   ├── Checkout.jsx
-│   │   │   ├── LoginPage.jsx
-│   │   │   ├── SignupPage.jsx
-│   │   │   ├── ProfilePage.jsx
-│   │   │   ├── OrdersPage.jsx
-│   │   │   ├── WishlistPage.jsx
-│   │   │   ├── Contact.jsx
-│   │   │   ├── About.jsx
-│   │   │   ├── NotFound.jsx
-│   │   │   │
-│   │   │   └── admin/
-│   │   │       ├── Dashboard.jsx
-│   │   │       ├── Products.jsx
-│   │   │       ├── AddProduct.jsx
-│   │   │       ├── EditProduct.jsx
-│   │   │       ├── Orders.jsx
-│   │   │       ├── Users.jsx
-│   │   │       ├── Coupons.jsx
-│   │   │       └── Settings.jsx
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── AppRoutes.jsx
-│   │   │   ├── AdminRoutes.jsx
-│   │   │   └── ProtectedRoutes.jsx
+│   │   │       ├── OrderTable.jsx
+│   │   │       ├── AnalyticsCard.jsx
+│   │   │       └── DashboardStats.jsx
 │   │   │
 │   │   ├── context/
 │   │   │   ├── AuthContext.jsx
 │   │   │   ├── CartContext.jsx
-│   │   │   └── ThemeContext.jsx
-│   │   │
-│   │   ├── redux/
-│   │   │   ├── store.js
-│   │   │   ├── productSlice.js
-│   │   │   ├── cartSlice.js
-│   │   │   ├── authSlice.js
-│   │   │   └── orderSlice.js
-│   │   │
-│   │   ├── services/
-│   │   │   ├── api.js
-│   │   │   ├── authService.js
-│   │   │   ├── paymentService.js
-│   │   │   └── productService.js
+│   │   │   ├── ThemeContext.jsx
+│   │   │   └── WishlistContext.jsx
 │   │   │
 │   │   ├── hooks/
 │   │   │   ├── useAuth.js
 │   │   │   ├── useCart.js
-│   │   │   └── useTheme.js
+│   │   │   ├── useTheme.js
+│   │   │   └── useWishlist.js
+│   │   │
+│   │   ├── layouts/
+│   │   │   ├── MainLayout.jsx
+│   │   │   └── AdminLayout.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   │
+│   │   │   ├── Home.jsx
+│   │   │   ├── Products.jsx
+│   │   │   ├── ProductPage.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   ├── Wishlist.jsx
+│   │   │   ├── PaymentSuccess.jsx
+│   │   │   ├── PaymentFailed.jsx
+│   │   │   │
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   ├── Register.jsx
+│   │   │   │   ├── ForgotPassword.jsx
+│   │   │   │   ├── ResetPassword.jsx
+│   │   │   │   └── AdminLogin.jsx
+│   │   │   │
+│   │   │   ├── dashboard/
+│   │   │   │   ├── UserDashboard.jsx
+│   │   │   │   ├── Orders.jsx
+│   │   │   │   ├── Profile.jsx
+│   │   │   │   └── Settings.jsx
+│   │   │   │
+│   │   │   └── admin/
+│   │   │       ├── AdminDashboard.jsx
+│   │   │       ├── ManageProducts.jsx
+│   │   │       ├── AddProduct.jsx
+│   │   │       ├── EditProduct.jsx
+│   │   │       ├── ManageUsers.jsx
+│   │   │       ├── ManageOrders.jsx
+│   │   │       └── Analytics.jsx
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── AdminRoute.jsx
+│   │   │   └── PublicRoute.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── productService.js
+│   │   │   ├── cartService.js
+│   │   │   ├── orderService.js
+│   │   │   ├── paymentService.js
+│   │   │   └── wishlistService.js
 │   │   │
 │   │   ├── utils/
-│   │   │   ├── helpers.js
+│   │   │   ├── validators.js
+│   │   │   ├── constants.js
 │   │   │   ├── formatPrice.js
-│   │   │   └── validators.js
+│   │   │   ├── generateSlug.js
+│   │   │   └── helpers.js
 │   │   │
 │   │   ├── styles/
-│   │   │   ├── globals.css
 │   │   │   ├── animations.css
-│   │   │   └── tailwind.css
+│   │   │   └── globals.css
 │   │   │
 │   │   ├── App.jsx
 │   │   ├── main.jsx
-│   │   └── firebase.js
+│   │   └── index.css
 │   │
+│   ├── tailwind.config.js
+│   ├── vite.config.js
 │   ├── package.json
-│   └── vite.config.js
+│   └── .env
 │
-│
-├── backend/
+├── server/
 │   │
 │   ├── config/
 │   │   ├── db.js
@@ -152,60 +157,57 @@ ecommerce-project/
 │   │
 │   ├── controllers/
 │   │   ├── authController.js
+│   │   ├── adminController.js
 │   │   ├── productController.js
-│   │   ├── cartController.js
 │   │   ├── orderController.js
+│   │   ├── cartController.js
 │   │   ├── paymentController.js
-│   │   ├── couponController.js
+│   │   ├── reviewController.js
+│   │   ├── wishlistController.js
 │   │   └── userController.js
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   ├── adminMiddleware.js
+│   │   ├── errorMiddleware.js
+│   │   ├── uploadMiddleware.js
+│   │   ├── validationMiddleware.js
+│   │   └── notFoundMiddleware.js
 │   │
 │   ├── models/
 │   │   ├── User.js
 │   │   ├── Product.js
 │   │   ├── Order.js
-│   │   ├── Payment.js
+│   │   ├── Cart.js
 │   │   ├── Review.js
-│   │   ├── Coupon.js
-│   │   └── Category.js
+│   │   └── Wishlist.js
 │   │
 │   ├── routes/
 │   │   ├── authRoutes.js
+│   │   ├── adminRoutes.js
 │   │   ├── productRoutes.js
-│   │   ├── cartRoutes.js
 │   │   ├── orderRoutes.js
 │   │   ├── paymentRoutes.js
-│   │   ├── couponRoutes.js
+│   │   ├── cartRoutes.js
+│   │   ├── reviewRoutes.js
+│   │   ├── wishlistRoutes.js
 │   │   └── userRoutes.js
-│   │
-│   ├── middleware/
-│   │   ├── authMiddleware.js
-│   │   ├── adminMiddleware.js
-│   │   ├── uploadMiddleware.js
-│   │   └── errorMiddleware.js
 │   │
 │   ├── utils/
 │   │   ├── generateToken.js
-│   │   ├── sendEmail.js
-│   │   ├── invoiceGenerator.js
-│   │   └── otpGenerator.js
+│   │   ├── sendResponse.js
+│   │   ├── validators.js
+│   │   ├── calculateDiscount.js
+│   │   └── asyncHandler.js
 │   │
 │   ├── uploads/
+│   │   ├── products/
+│   │   └── users/
 │   │
-│   ├── server.js
 │   ├── .env
-│   └── package.json
-│
-│
-├── database/
-│   ├── seedData.js
-│   └── backup/
-│
-│
-├── docs/
-│   ├── API_Documentation.md
-│   ├── Setup_Guide.md
-│   └── Deployment_Guide.md
-│
+│   ├── server.js
+│   ├── package.json
+│   └── README.md
 │
 ├── .gitignore
 ├── README.md

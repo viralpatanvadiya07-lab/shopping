@@ -2,8 +2,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { WishlistProvider } from './context/WishlistContext';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import Background3D from './components/common/Background3D';
 import AppRoutes from './routes/AppRoutes';
 import './styles/globals.css';
 import './styles/animations.css';
@@ -13,6 +15,8 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <CartProvider>
+          <WishlistProvider>
+          <Background3D />
           <Navbar />
           <AppRoutes />
           <Footer />
@@ -35,6 +39,7 @@ function App() {
               },
             }}
           />
+          </WishlistProvider>
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>

@@ -11,7 +11,7 @@ const UPIModal = ({ amount, isOpen, onClose, onPaymentSuccess }) => {
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes
   const upiId = "7285870201@fam";
   
-  const upiLink = `upi://pay?pa=${upiId}&pn=LuxeLane&am=${amount}&cu=INR&tn=Order%20Payment`;
+  const upiLink = `upi://pay?pa=${upiId}&pn=ShopVerse&am=${amount}&cu=INR&tn=Order%20Payment`;
 
   // Countdown Timer
   useEffect(() => {
@@ -116,7 +116,7 @@ const UPIModal = ({ amount, isOpen, onClose, onPaymentSuccess }) => {
           <div className="upi-v3__brand">
             <div className="v3-icon-badge">🛍️</div>
             <div>
-              <h3>LuxeLane Pay</h3>
+              <h3>ShopVerse Pay</h3>
               <p className="v3-secure-tag"><FiShield /> Secure Checkout</p>
             </div>
           </div>

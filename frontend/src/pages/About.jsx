@@ -13,8 +13,8 @@ const About = () => {
     <main className="about-page page-active" id="about-page">
       <div className="container">
         <div className="about__hero animate-fade-in-up">
-          <h1>About <span className="gradient-text">LuxeLane</span></h1>
-          <p>We're on a mission to make premium products accessible to everyone. Founded in 2024, LuxeLane has grown from a small startup to a global marketplace trusted by over 50,000 customers worldwide.</p>
+          <h1>About <span className="gradient-text">ShopVerse</span></h1>
+          <p>We're on a mission to make premium products accessible to everyone. Founded in 2024, ShopVerse has grown from a small startup to a global marketplace trusted by over 50,000 customers worldwide.</p>
         </div>
         <div className="about__features stagger-children">
           {features.map((f, i) => (

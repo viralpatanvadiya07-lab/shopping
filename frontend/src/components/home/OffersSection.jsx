@@ -1,8 +1,47 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FiClock, FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import './OffersSection.css';
 
 const OffersSection = () => {
+  // Set sale end date to 3 days from now
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
+
+  useEffect(() => {
+    // Store the end date in localStorage so it persists across reloads
+    let endDate = localStorage.getItem('shopverse_sale_end');
+    if (!endDate) {
+      const end = new Date();
+      end.setDate(end.getDate() + 3);
+      endDate = end.toISOString();
+      localStorage.setItem('shopverse_sale_end', endDate);
+    }
+
+    const calculateTime = () => {
+      const now = new Date().getTime();
+      const end = new Date(endDate).getTime();
+      const diff = end - now;
+
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, mins: 0, secs: 0 });
+        return;
+      }
+
+      setTimeLeft({
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        mins: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        secs: Math.floor((diff % (1000 * 60)) / 1000),
+      });
+    };
+
+    calculateTime();
+    const timer = setInterval(calculateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const pad = (n) => String(n).padStart(2, '0');
+
   return (
     <section className="offers section" id="offers-section">
       <div className="container">
@@ -22,22 +61,22 @@ const OffersSection = () => {
               </p>
               <div className="offers__timer">
                 <div className="offers__timer-item">
-                  <span className="offers__timer-number">02</span>
+                  <span className="offers__timer-number">{pad(timeLeft.days)}</span>
                   <span className="offers__timer-label">Days</span>
                 </div>
                 <span className="offers__timer-sep">:</span>
                 <div className="offers__timer-item">
-                  <span className="offers__timer-number">14</span>
+                  <span className="offers__timer-number">{pad(timeLeft.hours)}</span>
                   <span className="offers__timer-label">Hours</span>
                 </div>
                 <span className="offers__timer-sep">:</span>
                 <div className="offers__timer-item">
-                  <span className="offers__timer-number">36</span>
+                  <span className="offers__timer-number">{pad(timeLeft.mins)}</span>
                   <span className="offers__timer-label">Mins</span>
                 </div>
                 <span className="offers__timer-sep">:</span>
                 <div className="offers__timer-item">
-                  <span className="offers__timer-number">52</span>
+                  <span className="offers__timer-number">{pad(timeLeft.secs)}</span>
                   <span className="offers__timer-label">Secs</span>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiSearch, FiShoppingCart, FiHeart, FiUser, FiMenu, FiX, FiLogOut, FiPackage, FiSettings, FiChevronDown } from 'react-icons/fi';
+import { useWishlist } from '../../hooks/useWishlist';
 import { useCart } from '../../hooks/useCart';
 import { useAuth } from '../../hooks/useAuth';
 import SearchBar from './SearchBar';
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const { cartItems } = useCart();
   const { user, logout } = useAuth();
+  const { wishlistCount } = useWishlist();
   const location = useLocation();
   const navigate = useNavigate();
   const profileRef = useRef(null);
@@ -108,8 +110,11 @@ const Navbar = () => {
           </button>
 
           {/* Wishlist */}
-          <Link to="/wishlist" className="navbar__action-btn" id="wishlist-btn" aria-label="Wishlist">
+          <Link to="/wishlist" className="navbar__action-btn navbar__wishlist-btn" id="wishlist-btn" aria-label="Wishlist">
             <FiHeart />
+            {wishlistCount > 0 && (
+              <span className="navbar__wishlist-badge">{wishlistCount}</span>
+            )}
           </Link>
 
           {/* Cart */}

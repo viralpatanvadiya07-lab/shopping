@@ -1,0 +1,179 @@
+/* ── Futuristic Cinematic Background ── */
+
+.futuristic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #0a0e1a 0%, #02040a 100%);
+  overflow: hidden;
+  perspective: 2000px;
+}
+
+.bg-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Atmospheric Glow Sources */
+.bg-light-source {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  pointer-events: none;
+  animation: light-drift 20s infinite alternate;
+}
+
+.bg-light-purple {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #7c3aed, transparent 70%);
+  top: -200px;
+  left: -100px;
+}
+
+.bg-light-cyan {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #06b6d4, transparent 70%);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.bg-light-blue {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #2563eb, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+}
+
+@keyframes light-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(5%, 5%) scale(1.1); }
+}
+
+/* Geometric Elements */
+.geometric-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.geo-shape {
+  position: absolute;
+  transition: transform 0.1s ease-out;
+}
+
+/* Glassmorphic Cube */
+.geo-cube {
+  width: 120px;
+  height: 120px;
+  top: 20%;
+  right: 15%;
+  transform-style: preserve-3d;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(124, 58, 237, 0.1);
+}
+
+.cube-face:nth-child(1) { transform: translateZ(60px); }
+.cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(60px); }
+.cube-face:nth-child(3) { transform: rotateX(90deg) translateZ(60px); }
+.cube-face:nth-child(4) { transform: rotateY(180deg) translateZ(60px); }
+
+/* Glowing Orb */
+.geo-orb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  bottom: 25%;
+  left: 10%;
+  box-shadow: 0 0 50px rgba(6, 182, 212, 0.1), inset 0 0 30px rgba(6, 182, 212, 0.1);
+}
+
+/* Glass Pyramid (simplified) */
+.geo-pyramid {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  top: 50%;
+  left: 20%;
+  position: relative;
+}
+
+.geo-pyramid::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  background: var(--primary-glow);
+  filter: blur(30px);
+  opacity: 0.3;
+}
+
+/* Animations */
+.animate-float-1 { animation: float 10s infinite alternate ease-in-out; }
+.animate-float-2 { animation: float 15s infinite alternate-reverse ease-in-out; }
+.animate-float-3 { animation: float 12s infinite alternate ease-in-out; animation-delay: -2s; }
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-30px) rotate(5deg); }
+}
+
+/* Cinematic Overlays */
+.bg-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.4;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(2, 4, 10, 0.8) 100%);
+  pointer-events: none;
+}
+
+.bg-scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+/* Particles drift animation */
+@keyframes particles-drift {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}

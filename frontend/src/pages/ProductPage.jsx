@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FiShoppingCart, FiHeart, FiStar, FiMinus, FiPlus, FiTruck, FiShield, FiRefreshCw, FiArrowLeft } from 'react-icons/fi';
 import { products, formatPrice, getDiscountPercent } from '../data/products';
 import { useCart } from '../hooks/useCart';
+import { useWishlist } from '../hooks/useWishlist';
 import ProductCard from '../components/product/ProductCard';
 import Button from '../components/common/Button';
 import './ProductPage.css';
@@ -11,6 +12,7 @@ const ProductPage = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState(0);
 
@@ -27,6 +29,7 @@ const ProductPage = () => {
 
   const discount = product.originalPrice ? getDiscountPercent(product.originalPrice, product.price) : 0;
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const wishlisted = isInWishlist(product.id);
 
   return (
     <main className="product-page page-active" id="product-page">
@@ -111,8 +114,14 @@ const ProductPage = () => {
               >
                 Add to Cart
               </Button>
-              <Button variant="outline" size="lg" icon={<FiHeart />} id="wishlist-product-btn">
-                Wishlist
+              <Button
+                variant={wishlisted ? 'primary' : 'outline'}
+                size="lg"
+                icon={<FiHeart />}
+                onClick={() => toggleWishlist(product)}
+                id="wishlist-product-btn"
+              >
+                {wishlisted ? 'Wishlisted' : 'Wishlist'}
               </Button>
             </div>
 
