@@ -68,8 +68,21 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        {/* Mobile Menu Overlay */}
-        <div className={`navbar__links ${isMobileOpen ? 'navbar__links--open' : ''}`}>
+        <div className="navbar__links-desktop">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.path}
+              to={link.path} 
+              className={`navbar__link ${location.pathname === link.path ? 'navbar__link--active' : ''}`}
+            >
+              {link.label}
+              <div className="navbar__link-indicator" />
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Drawer */}
+        <div className={`navbar__links-mobile ${isMobileOpen ? 'navbar__links-mobile--open' : ''}`}>
           <div className="navbar__menu-header">
             <div className="navbar__logo">
               <div className="navbar__logo-icon">🛍️</div>
