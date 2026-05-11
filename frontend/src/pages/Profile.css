@@ -156,6 +156,10 @@
   padding: var(--space-xl);
 }
 
+.profile__details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: var(--space-2xl);
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--border-glass);
@@ -247,15 +251,20 @@
   }
 
   .profile__layout {
-    grid-template-columns: 1fr;
-    gap: 80px; /* Increased gap for better separation */
+    display: flex; /* Using flex for more reliable stacking on mobile */
+    flex-direction: column;
+    gap: 40px;
   }
 
   .profile__card {
     position: static;
-    margin-top: -50px;
-    margin-bottom: 40px; /* Added extra margin to separate from next card */
+    margin-top: -40px;
+    width: 100%;
     z-index: 10;
+  }
+
+  .profile__details {
+    margin-top: 20px; /* Force extra gap below card */
   }
 
   .profile__action-grid {
