@@ -248,13 +248,13 @@
 
   .profile__layout {
     grid-template-columns: 1fr;
-    gap: 60px; /* Much larger gap to push details down */
+    gap: 80px; /* Increased gap for better separation */
   }
 
   .profile__card {
     position: static;
-    margin-top: -50px; /* Even more overlap for a bolder look */
-    margin-bottom: var(--space-lg);
+    margin-top: -50px;
+    margin-bottom: 40px; /* Added extra margin to separate from next card */
     z-index: 10;
   }
 
