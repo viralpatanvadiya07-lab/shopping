@@ -133,15 +133,20 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer__bottom">
-        <div className="container">
-          <div className="footer__bottom-content">
-            <p>© {currentYear} ShopVerse. All rights reserved.</p>
-            <div className="footer__payment-methods">
-              <span>💳</span>
-              <span>🏦</span>
-              <span>📱</span>
-            </div>
+        <div className="footer__bottom">
+          <div className="footer__disclaimer-box">
+            <p className="footer__disclaimer">
+              ⚠️ <strong>DEMO MODE:</strong> This is a portfolio project. No real products or payments are processed. 
+              Unauthorized use of names or images is strictly for demonstration.
+            </p>
           </div>
+          <div className="footer__divider" />
+          <p>&copy; {new Date().getFullYear()} ShopVerse. All rights reserved.</p>
+        </div>
+        <div className="footer__payment-methods">
+          <span>💳</span>
+          <span>🏦</span>
+          <span>📱</span>
         </div>
       </div>
     </footer>

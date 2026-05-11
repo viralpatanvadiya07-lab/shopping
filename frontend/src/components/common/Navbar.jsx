@@ -60,10 +60,11 @@ const Navbar = () => {
       <div className="navbar__container container">
         {/* Logo */}
         <Link to="/" className="navbar__logo" id="navbar-logo">
-          <span className="navbar__logo-icon">🛍️</span>
-          <span className="navbar__logo-text">
+          <div className="navbar__logo-icon">🛍️</div>
+          <div className="navbar__logo-text">
             Shop<span className="gradient-text">Verse</span>
-          </span>
+            <span className="navbar__demo-badge">DEMO MODE</span>
+          </div>
         </Link>
 
         {/* Desktop Nav Links */}
