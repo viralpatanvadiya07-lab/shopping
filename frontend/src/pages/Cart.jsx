@@ -80,14 +80,14 @@ const Cart = () => {
               fullWidth 
               icon={<FiArrowRight />} 
               id="checkout-btn"
-              onClick={() => setIsUPIOpen(true)}
+              onClick={() => alert('🚀 ShopVerse Demo Mode: Payments are currently disabled for this showcase project.')}
             >
-              Pay via UPI (GPay/PhonePe)
+              Demo Mode Only
             </Button>
             
             <button 
               className="cart__razorpay-link" 
-              onClick={handleCheckout}
+              onClick={() => alert('Demo Mode: Cards/Netbanking are disabled.')}
               style={{
                 width: '100%', 
                 marginTop: '10px', 
@@ -99,20 +99,12 @@ const Cart = () => {
                 textDecoration: 'underline'
               }}
             >
-              Or pay with Cards/Netbanking
+              Cards/Netbanking (Disabled)
             </button>
           </div>
         </div>
       </div>
 
-      <UPIModal 
-        isOpen={isUPIOpen} 
-        onClose={() => setIsUPIOpen(false)} 
-        amount={total.toFixed(2)} 
-        onPaymentSuccess={() => {
-          clearCart();
-        }}
-      />
     </main>
   );
 };

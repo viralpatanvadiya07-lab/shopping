@@ -151,15 +151,6 @@ const Checkout = () => {
         </div>
       </div>
 
-      <UPIModal 
-        isOpen={isUPIOpen} 
-        onClose={() => setIsUPIOpen(false)} 
-        amount={total.toFixed(2)} 
-        onPaymentSuccess={() => {
-          clearCart();
-          navigate('/');
-        }}
-      />
     </main>
   );
 };
