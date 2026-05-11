@@ -103,7 +103,7 @@ export const products = [
     description: 'Artisan-crafted ceramic dripper with double-wall insulated carafe. Brew café-quality coffee at home.',
     price: 79.99,
     originalPrice: 99.99,
-    image: 'https://images.unsplash.com/photo-1517256064527-9d164d0070e5?q=80&w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=600&auto=format&fit=crop',
     category: 'Home',
     rating: 4.9,
     reviews: 156,
