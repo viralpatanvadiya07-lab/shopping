@@ -24,12 +24,10 @@ const Checkout = () => {
   }
 
   const handlePlaceOrder = () => {
-    if (paymentMethod === 'upi') {
-      setIsUPIOpen(true);
-    } else {
-      // Simulate other payments
-      alert('This payment method is coming soon! Please use UPI for now.');
-    }
+    alert('🚀 ShopVerse Demo Mode: Payments are currently disabled for this showcase project. No real transactions will occur.');
+    // Optional: You can still simulate a successful order without taking money
+    // clearCart();
+    // navigate('/orders');
   };
 
   return (
