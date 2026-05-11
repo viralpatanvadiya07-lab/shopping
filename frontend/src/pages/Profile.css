@@ -253,7 +253,7 @@
 
   .profile__card {
     position: static;
-    margin-top: -30px; /* Slight overlap with header for modern look */
+    margin-top: -50px; /* Even more overlap for a bolder look */
     margin-bottom: var(--space-lg);
     z-index: 10;
   }
