@@ -31,7 +31,7 @@
 
 /* Header */
 .profile__header {
-  margin-bottom: 50px; /* Increased from 2xl for better breathing room */
+  margin-bottom: 30px; /* Reduced to bring card closer to header */
 }
 
 .profile__header h1 {
