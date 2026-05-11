@@ -1,0 +1,362 @@
+/* ── UPI Modal V3 Ultimate Professional Styles ── */
+
+.upi-modal-v3 {
+  width: 100%;
+  max-width: 420px;
+  background: #151b2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.7);
+}
+
+.upi-v3__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Header */
+.upi-v3__header {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.upi-v3__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.v3-icon-badge {
+  font-size: 1.5rem;
+  background: rgba(124, 58, 237, 0.1);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.upi-v3__brand h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.v3-secure-tag {
+  font-size: 0.75rem;
+  color: var(--success-light);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.upi-v3__timer {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.v3-timer-urgent {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  animation: pulse-red 1s infinite;
+}
+
+/* Amount Banner */
+.upi-v3__amount-banner {
+  background: var(--gradient-primary);
+  padding: 20px 32px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upi-v3__amount-banner label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.v3-price {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: var(--font-display);
+}
+
+/* Tabs */
+.upi-v3__tabs {
+  display: flex;
+  margin: 20px 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.v3-tab {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.v3-tab.active {
+  color: var(--primary-light);
+}
+
+.v3-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-light);
+}
+
+/* Body */
+.upi-v3__body {
+  padding: 24px 32px;
+  min-height: 240px;
+}
+
+.v3-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v3-qr-frame {
+  padding: 12px;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.v3-qr-pulse {
+  position: absolute;
+  inset: -8px;
+  border: 2px solid var(--primary-light);
+  border-radius: 28px;
+  animation: pulse-glow 2s infinite;
+}
+
+.v3-instruction {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.v3-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.v3-app-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.v3-app-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.v3-app-icon-container {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.v3-app-icon-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.v3-app-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.v3-id-copy {
+  margin-top: 20px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.v3-copied {
+  color: var(--success-light);
+}
+
+/* Footer */
+.upi-v3__footer {
+  padding: 0 32px 32px;
+}
+
+.v3-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #f59e0b;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.v3-primary-btn {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  color: #0a0e1a;
+  border: none;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.v3-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.v3-logos {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.v3-logos img {
+  height: 14px;
+  filter: grayscale(1) brightness(2);
+  opacity: 0.4;
+}
+
+/* Verifying State */
+.v3-loader {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.v3-loader__spinner {
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgba(124, 58, 237, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.v3-loader__shield {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--primary-light);
+}
+
+.v3-status-text {
+  margin-top: 24px;
+  font-size: 1.4rem;
+}
+
+.v3-subtext {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.v3-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.v3-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--gradient-primary);
+  animation: fillProgress 5s linear forwards;
+}
+
+@keyframes fillProgress {
+  to { width: 100%; }
+}
+
+/* Success State */
+.v3-success-circle {
+  font-size: 4rem;
+  color: var(--success-light);
+}
+
+.v3-success-details {
+  margin-top: 20px;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: var(--success-light);
+  font-weight: 700;
+}
+
+.v3-auto-redirect {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

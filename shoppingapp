@@ -1,0 +1,212 @@
+ecommerce-project/
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │   ├── favicon.ico
+│   │   ├── logo.png
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   ├── icons/
+│   │   │   ├── banners/
+│   │   │   └── animations/
+│   │   │
+│   │   ├── components/
+│   │   │   │
+│   │   │   ├── common/
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── Loader.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   └── Button.jsx
+│   │   │   │
+│   │   │   ├── home/
+│   │   │   │   ├── HeroSection.jsx
+│   │   │   │   ├── Categories.jsx
+│   │   │   │   ├── FeaturedProducts.jsx
+│   │   │   │   ├── TrendingProducts.jsx
+│   │   │   │   ├── OffersSection.jsx
+│   │   │   │   └── Reviews.jsx
+│   │   │   │
+│   │   │   ├── product/
+│   │   │   │   ├── ProductCard.jsx
+│   │   │   │   ├── ProductDetails.jsx
+│   │   │   │   ├── ProductImages.jsx
+│   │   │   │   ├── Ratings.jsx
+│   │   │   │   └── ProductFilter.jsx
+│   │   │   │
+│   │   │   ├── cart/
+│   │   │   │   ├── CartItem.jsx
+│   │   │   │   ├── CartSummary.jsx
+│   │   │   │   └── CouponBox.jsx
+│   │   │   │
+│   │   │   ├── checkout/
+│   │   │   │   ├── CheckoutForm.jsx
+│   │   │   │   ├── PaymentMethods.jsx
+│   │   │   │   ├── AddressForm.jsx
+│   │   │   │   └── OrderSummary.jsx
+│   │   │   │
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   ├── Signup.jsx
+│   │   │   │   ├── ForgotPassword.jsx
+│   │   │   │   └── OTPVerification.jsx
+│   │   │   │
+│   │   │   ├── user/
+│   │   │   │   ├── Profile.jsx
+│   │   │   │   ├── Orders.jsx
+│   │   │   │   ├── Wishlist.jsx
+│   │   │   │   ├── Notifications.jsx
+│   │   │   │   └── Settings.jsx
+│   │   │   │
+│   │   │   └── admin/
+│   │   │       ├── AdminSidebar.jsx
+│   │   │       ├── DashboardCards.jsx
+│   │   │       ├── ProductTable.jsx
+│   │   │       ├── OrderTable.jsx
+│   │   │       ├── UserTable.jsx
+│   │   │       └── AnalyticsChart.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Shop.jsx
+│   │   │   ├── ProductPage.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── SignupPage.jsx
+│   │   │   ├── ProfilePage.jsx
+│   │   │   ├── OrdersPage.jsx
+│   │   │   ├── WishlistPage.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   │
+│   │   │   └── admin/
+│   │   │       ├── Dashboard.jsx
+│   │   │       ├── Products.jsx
+│   │   │       ├── AddProduct.jsx
+│   │   │       ├── EditProduct.jsx
+│   │   │       ├── Orders.jsx
+│   │   │       ├── Users.jsx
+│   │   │       ├── Coupons.jsx
+│   │   │       └── Settings.jsx
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── AppRoutes.jsx
+│   │   │   ├── AdminRoutes.jsx
+│   │   │   └── ProtectedRoutes.jsx
+│   │   │
+│   │   ├── context/
+│   │   │   ├── AuthContext.jsx
+│   │   │   ├── CartContext.jsx
+│   │   │   └── ThemeContext.jsx
+│   │   │
+│   │   ├── redux/
+│   │   │   ├── store.js
+│   │   │   ├── productSlice.js
+│   │   │   ├── cartSlice.js
+│   │   │   ├── authSlice.js
+│   │   │   └── orderSlice.js
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── paymentService.js
+│   │   │   └── productService.js
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useCart.js
+│   │   │   └── useTheme.js
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── helpers.js
+│   │   │   ├── formatPrice.js
+│   │   │   └── validators.js
+│   │   │
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   ├── animations.css
+│   │   │   └── tailwind.css
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── firebase.js
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+│
+├── backend/
+│   │
+│   ├── config/
+│   │   ├── db.js
+│   │   ├── cloudinary.js
+│   │   └── razorpay.js
+│   │
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── productController.js
+│   │   ├── cartController.js
+│   │   ├── orderController.js
+│   │   ├── paymentController.js
+│   │   ├── couponController.js
+│   │   └── userController.js
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Product.js
+│   │   ├── Order.js
+│   │   ├── Payment.js
+│   │   ├── Review.js
+│   │   ├── Coupon.js
+│   │   └── Category.js
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── productRoutes.js
+│   │   ├── cartRoutes.js
+│   │   ├── orderRoutes.js
+│   │   ├── paymentRoutes.js
+│   │   ├── couponRoutes.js
+│   │   └── userRoutes.js
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   ├── adminMiddleware.js
+│   │   ├── uploadMiddleware.js
+│   │   └── errorMiddleware.js
+│   │
+│   ├── utils/
+│   │   ├── generateToken.js
+│   │   ├── sendEmail.js
+│   │   ├── invoiceGenerator.js
+│   │   └── otpGenerator.js
+│   │
+│   ├── uploads/
+│   │
+│   ├── server.js
+│   ├── .env
+│   └── package.json
+│
+│
+├── database/
+│   ├── seedData.js
+│   └── backup/
+│
+│
+├── docs/
+│   ├── API_Documentation.md
+│   ├── Setup_Guide.md
+│   └── Deployment_Guide.md
+│
+│
+├── .gitignore
+├── README.md
+└── package.json
