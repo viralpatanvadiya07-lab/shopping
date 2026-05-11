@@ -50,7 +50,7 @@
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: var(--space-xl);
-  align-items: stretch; /* Stretch to make both cards same height */
+  align-items: start; /* Back to original start alignment */
 }
 
 /* Profile Card */
@@ -58,8 +58,8 @@
   padding: var(--space-xl);
   text-align: center;
   position: sticky;
-  top: 110px;
-  height: 100%; /* Fill the grid row height */
+  top: 90px; /* Moved up from 110px */
+  height: fit-content; /* Back to original size */
 }
 
 .profile__avatar-section {
