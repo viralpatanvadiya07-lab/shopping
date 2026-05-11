@@ -51,7 +51,8 @@
   padding: var(--space-xl);
   text-align: center;
   position: sticky;
-  top: 100px;
+  top: 110px;
+  height: fit-content;
 }
 
 .profile__avatar-section {
@@ -240,10 +241,12 @@
 
   .profile__layout {
     grid-template-columns: 1fr;
+    gap: var(--space-2xl); /* Increased gap for mobile */
   }
 
   .profile__card {
     position: static;
+    margin-bottom: var(--space-lg);
   }
 
   .profile__action-grid {
