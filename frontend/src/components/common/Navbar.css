@@ -175,22 +175,40 @@
 .navbar__login-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 18px;
-  background: var(--gradient-primary);
-  color: white;
+  gap: 8px;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-base);
-  box-shadow: 0 2px 12px var(--primary-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar__login-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0.8;
+  z-index: -1;
+  transition: opacity 0.3s ease;
 }
 
 .navbar__login-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px var(--primary-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--primary-glow);
+  border-color: rgba(255, 255, 255, 0.3);
   color: white;
+}
+
+.navbar__login-btn:hover::before {
+  opacity: 1;
 }
 
 /* Profile Dropdown */
@@ -215,8 +233,8 @@
 }
 
 .navbar__avatar {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--gradient-primary);
   display: flex;
@@ -225,6 +243,15 @@
   color: white;
   font-weight: 700;
   font-size: 0.85rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px var(--primary-glow);
+  transition: all 0.3s ease;
+}
+
+.navbar__profile-btn:hover .navbar__avatar {
+  transform: scale(1.1);
+  border-color: white;
+  box-shadow: 0 0 25px var(--primary-glow);
 }
 
 .navbar__chevron {
