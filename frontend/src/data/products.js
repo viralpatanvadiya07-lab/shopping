@@ -130,7 +130,7 @@ export const products = [
     name: "Dairy Milk Mini",
     price: 1,
     originalPrice: 5,
-    image: "https://images.unsplash.com/photo-1621939514649-280e2ee10f60?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=600&auto=format&fit=crop",
     category: "Food",
     rating: 5,
     reviews: 120,
