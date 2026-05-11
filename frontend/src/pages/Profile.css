@@ -153,7 +153,7 @@
 
 /* Details */
 .profile__details {
-  padding: var(--space-xl);
+  padding: var(--space-lg); /* Reduced padding */
 }
 
 .profile__details-header {
@@ -190,8 +190,8 @@
 .profile__fields {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-2xl);
+  gap: var(--space-md); /* Reduced gap */
+  margin-bottom: var(--space-xl);
 }
 
 .profile__field label {
@@ -205,9 +205,9 @@
 }
 
 .profile__field p {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   color: var(--text-primary);
-  padding: 10px 0;
+  padding: 6px 0; /* Tighter padding */
 }
 
 /* Quick Actions */
