@@ -336,54 +336,108 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 300px;
     height: 100vh;
     flex-direction: column;
-    align-items: flex-start;
-    background: var(--bg-secondary);
-    padding: 80px 24px 24px;
-    gap: 4px;
-    transition: right var(--transition-slow);
+    background: rgba(10, 14, 26, 0.95);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 0;
+    gap: 0;
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: var(--z-modal);
     border-left: 1px solid var(--border-glass);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
   }
 
   .navbar__links--open {
     right: 0;
   }
 
-  .navbar__link {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 1rem;
+  .navbar__menu-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-glass);
   }
 
-  .navbar__mobile-auth {
+  .navbar__menu-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-glass-light);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .navbar__menu-body {
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-top: auto;
-    gap: 4px;
+    gap: 8px;
   }
 
-  .navbar__logout-btn {
-    text-align: left;
-    font-size: 0.9rem;
-  }
-
-  .navbar__mobile-toggle {
+  .navbar__menu-item {
     display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
   }
 
-  .navbar__overlay {
-    display: block;
-    position: fixed;
+  .navbar__menu-item .menu-icon {
+    font-size: 1.2rem;
+    color: var(--primary-light);
+  }
+
+  .navbar__menu-item:hover,
+  .navbar__menu-item.active {
+    background: var(--bg-glass-light);
+    color: var(--text-primary);
+    transform: translateX(8px);
+  }
+
+  .navbar__menu-item.active .menu-icon {
+    color: var(--accent-light);
+  }
+
+  .navbar__menu-divider {
+    height: 1px;
+    background: var(--border-glass);
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .navbar__menu-divider::after {
+    content: '';
+    position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: var(--z-modal-backdrop);
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+  }
+
+  .navbar__menu-item--primary {
+    background: var(--gradient-primary);
+    color: white !important;
+    justify-content: center;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px var(--primary-glow);
+  }
+
+  .logout-item {
+    color: var(--error-light);
   }
 
   .navbar__login-btn span {

@@ -68,35 +68,56 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <ul className={`navbar__links ${isMobileOpen ? 'navbar__links--open' : ''}`}>
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className={`navbar__link ${location.pathname === link.path ? 'navbar__link--active' : ''}`}
-                id={`nav-link-${link.label.toLowerCase()}`}
+        {/* Mobile Menu Overlay */}
+        <div className={`navbar__links ${isMobileOpen ? 'navbar__links--open' : ''}`}>
+          <div className="navbar__menu-header">
+            <div className="navbar__logo">
+              <div className="navbar__logo-icon">🛍️</div>
+              <div className="navbar__logo-text">Shop<span className="gradient-text">Verse</span></div>
+            </div>
+            <button className="navbar__menu-close" onClick={() => setIsMobileOpen(false)}>
+              <FiX />
+            </button>
+          </div>
+
+          <div className="navbar__menu-body">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.path}
+                to={link.path} 
+                className={`navbar__menu-item ${location.pathname === link.path ? 'active' : ''}`} 
+                onClick={() => setIsMobileOpen(false)}
               >
-                {link.label}
-                <span className="navbar__link-indicator" />
+                <span>{link.label}</span>
               </Link>
-            </li>
-          ))}
-          {/* Mobile-only auth links */}
-          <li className="navbar__mobile-auth">
+            ))}
+
+            <div className="navbar__menu-divider" />
+
             {user ? (
               <>
-                <Link to="/profile" className="navbar__link">Profile</Link>
-                <Link to="/orders" className="navbar__link">Orders</Link>
-                <button onClick={handleLogout} className="navbar__link navbar__logout-btn">Logout</button>
+                <Link to="/profile" className="navbar__menu-item" onClick={() => setIsMobileOpen(false)}>
+                  <FiUser className="menu-icon" /> <span>Profile</span>
+                </Link>
+                <Link to="/orders" className="navbar__menu-item" onClick={() => setIsMobileOpen(false)}>
+                  <FiPackage className="menu-icon" /> <span>Orders</span>
+                </Link>
+                <button className="navbar__menu-item logout-item" onClick={() => { handleLogout(); setIsMobileOpen(false); }}>
+                  <FiLogOut className="menu-icon" /> <span>Logout</span>
+                </button>
               </>
             ) : (
               <>
-                <Link to="/login" className="navbar__link">Login</Link>
-                <Link to="/signup" className="navbar__link">Sign Up</Link>
+                <Link to="/login" className="navbar__menu-item" onClick={() => setIsMobileOpen(false)}>
+                  <FiUser className="menu-icon" /> <span>Login</span>
+                </Link>
+                <Link to="/signup" className="navbar__menu-item navbar__menu-item--primary" onClick={() => setIsMobileOpen(false)}>
+                  <span>Sign Up</span>
+                </Link>
               </>
             )}
-          </li>
-        </ul>
+          </div>
+        </div>
 
         {/* Actions */}
         <div className="navbar__actions">
