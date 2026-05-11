@@ -370,23 +370,25 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+    width: 280px; /* Slightly narrower for better look */
     height: 100vh;
     flex-direction: column;
-    background: rgba(10, 14, 26, 0.95);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: rgba(10, 14, 26, 0.98); /* More opaque for clarity */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 0;
     gap: 0;
-    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: var(--z-modal);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999; /* Ensure it's on top */
     border-left: 1px solid var(--border-glass);
-    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     display: flex;
+    visibility: hidden; /* Hide completely when not open */
   }
 
   .navbar__links-mobile--open {
     right: 0;
+    visibility: visible;
   }
 
   .navbar__menu-header {
