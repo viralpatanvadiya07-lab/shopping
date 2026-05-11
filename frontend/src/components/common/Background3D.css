@@ -177,3 +177,44 @@
   from { background-position: 0 0; }
   to { background-position: 100px 100px; }
 }
+
+/* ── Mobile Optimizations ── */
+@media (max-width: 768px) {
+  .bg-light-source {
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+
+  .bg-light-purple { width: 400px; height: 400px; }
+  .bg-light-cyan { width: 300px; height: 300px; }
+  .bg-light-blue { width: 350px; height: 350px; }
+  
+  .geo-cube {
+    width: 60px;
+    height: 60px;
+    top: 15%;
+    right: 10%;
+  }
+  
+  .cube-face:nth-child(1) { transform: translateZ(30px); }
+  .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(30px); }
+  .cube-face:nth-child(3) { transform: rotateX(90deg) translateZ(30px); }
+  .cube-face:nth-child(4) { transform: rotateY(180deg) translateZ(30px); }
+
+  .geo-orb {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 5%;
+    opacity: 0.2;
+  }
+  
+  .geo-pyramid {
+    display: none; /* Keep mobile view clean */
+  }
+
+  .bg-grid-overlay {
+    background-size: 40px 40px;
+    opacity: 0.2;
+  }
+}

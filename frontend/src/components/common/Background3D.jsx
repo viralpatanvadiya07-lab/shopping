@@ -12,8 +12,10 @@ const Background3D = () => {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
+    const isMobile = window.innerWidth < 768;
     const particles = [];
-    const particleCount = 100;
+    const particleCount = isMobile ? 40 : 100;
+    const connectionDistance = isMobile ? 60 : 100;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -74,9 +76,27 @@ const Background3D = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
+      particles.forEach((p, index) => {
         p.update(mx, my);
         p.draw();
+
+        // Connect particles for a tech-mesh look
+        for (let j = index + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < connectionDistance) {
+            ctx.beginPath();
+            ctx.strokeStyle = p.color;
+            ctx.globalAlpha = (1 - dist / connectionDistance) * 0.15;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
       });
       animationFrameId = requestAnimationFrame(animate);
     };
