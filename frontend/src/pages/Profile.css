@@ -90,7 +90,7 @@
   padding: var(--space-lg) 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
 }
 
 .profile__stat {
@@ -148,11 +148,9 @@
   padding: var(--space-xl);
 }
 
-.profile__details-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-glass);
 }
 
 .profile__details-header h3 {
@@ -203,9 +201,9 @@
 /* Quick Actions */
 .profile__actions h3 {
   font-size: 1.2rem;
-  margin-bottom: var(--space-lg);
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-color);
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border-glass);
 }
 
 .profile__action-grid {
