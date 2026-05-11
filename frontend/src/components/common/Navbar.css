@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Logo */
@@ -388,5 +388,23 @@
 
   .navbar__login-btn span {
     display: none;
+  }
+
+  .navbar__logo-text {
+    font-size: 1.2rem;
+  }
+
+  .navbar__demo-badge {
+    font-size: 0.5rem;
+    padding: 1px 6px;
+  }
+
+  .navbar__container {
+    padding: 0 16px;
+    gap: 0.5rem;
+  }
+
+  .navbar__actions {
+    gap: 8px;
   }
 }
